@@ -4,11 +4,11 @@
 #include "cocos2d.h"
 using namespace cocos2d;
 
-class DirectController :
+class FallDownController :
 	public Controller
 {
 public:
-	CREATE_FUNC(DirectController);
+	CREATE_FUNC(FallDownController);
 	virtual bool init();
 	virtual void update(float dt);
 
@@ -18,18 +18,9 @@ public:
 	virtual void ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent);
 	virtual void ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent);
 
-	virtual void didAccelerate(CCAcceleration* pAccelerationValue);
-	/* 设置X方向的移动速度 */
-	void setiXSpeed(float iSpeed);
-
 	/* 设置Y方向的移动速度*/
-	void setiYSpeed(float iSpeed);
-
+	void setiYSpeed(int iSpeed);
 private:
-	float iXSpeed;
-	float iYSpeed;
-	// 触摸开始点
-	CCPoint startP;
-	bool isStartTouch;
+	int iYSpeed;
 };
 
